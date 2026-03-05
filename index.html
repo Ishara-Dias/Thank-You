@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Lunch Reservation Confirmed</title>
+<title>Lunch Reservation Confirmation</title>
+<style>
+body{
+font-family: Arial;
+text-align:center;
+margin-top:100px;
+}
+.ref{
+font-size:40px;
+color:green;
+font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
-<h2>Your lunch reservation is confirmed</h2>
+<h2>Your Lunch Reservation is Confirmed</h2>
+<p>Your Reference Number:</p>
 
-<p>Your reference number:</p>
-
-<h1 id="ref"></h1>
+<div class="ref" id="refnum">Loading...</div>
 
 <script>
-const urlParams = new URLSearchParams(window.location.search);
-const ref = urlParams.get('ref');
-document.getElementById("ref").innerText = ref;
+const params = new URLSearchParams(window.location.search);
+const ref = params.get("ref");
+
+if(ref){
+document.getElementById("refnum").innerText = ref;
+}else{
+document.getElementById("refnum").innerText = "Reference Not Found";
+}
 </script>
 
 </body>
