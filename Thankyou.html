@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lunch Reservation Confirmed</title>
+</head>
+<body>
+
+<h2>Your lunch reservation is confirmed</h2>
+
+<p>Your reference number:</p>
+
+<h1 id="ref"></h1>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const ref = urlParams.get('ref');
+document.getElementById("ref").innerText = ref;
+</script>
+
+</body>
+</html>
